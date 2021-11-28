@@ -39,6 +39,14 @@ std::vector<std::vector<int>> getState(const std::string& input) {
 
     }
 
+    // check if the format of the state is correct
+    for (int i = 1; (i < state.size()) || (state.size() == 0); ++i) {
+        if ((state.size() == 0) || (state[i].size() != state[0].size()) || ((state.size() % 2) != 0) || (available.size() == 0)) {
+            std::cerr << "Error(3): Invalid system state. Make sure the input file has the correct format and do not skip data.";
+            exit(3);
+        }
+    }
+    
     // replace each process's MAX data with NEED data
     for (int i = 1; i < state.size(); (i += 2)) {
         for (int j = 0; j < state[0].size(); ++j) {
@@ -118,11 +126,9 @@ std::string getSafetySeq(const std::vector<std::vector<int>>& state) {
             i = 1;
             prevFinishAmt = finishAmt;
         } else if (finishAmt == finish.size()) {
-            return safetySeq;
+            break;
         }
     }
 
-    // if invalid system state is given, exit with error
-    std::cerr << "Error(3): Invalid system state. Make sure the input file has the correct format.";
-    exit(3);
+    return safetySeq;
 }
