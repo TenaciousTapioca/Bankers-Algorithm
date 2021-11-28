@@ -1,8 +1,9 @@
-/**
+/** banker.cpp
  *  Nghia Dao
  *  Banker's Algorithm
- *  CS
+ *  CS33211
  */
+
 #include "banker.hpp"
 #include <iostream>
 #include <fstream>
