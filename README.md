@@ -1,6 +1,6 @@
 # Bankers-Algorithm
 ## Overview
-This implementation is written in C++ and involves a process that takes in a text file with the state of a system and determines the safe sequence using the Banker's Algorithm. This algorithm calls for matrices for *allocation*, *max*, and *need*, and a vector for *available*. However, this program parses a given text file and stores the data into a single matrix.
+This implementation is written in C++ and involves a program that takes in a text file with the state of a system and determines the safe sequence using the Banker's Algorithm to avoid deadlock. This algorithm calls for matrices for *allocation*, *max*, and *need*, and a vector for *available*. However, this program parses a given text file and stores the data into a single matrix.
 
 If the given input is in the correct format, this matrix is divided in a way such that every even index, including zero, represents a row (a vector) in the *allocation* matrix; and every odd index represents a row in the *need* matrix. The *need* matrix is found by subtracting the values in the *allocation* matrix from the values in the *max* matrix. Finally, the *available* vector is appended to the matrix as the last element. The parsing is color coded below:
 <p align="center">
